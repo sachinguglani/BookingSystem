@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(220, 241, 248);
+  background-repeat: repeat-y;
+  color: rgb(13, 11, 13);
+  font-variant: small-caps;
+  }
+  th, td {
+    border-bottom: 1px solid #ddd;
+  }

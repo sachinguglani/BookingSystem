@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<style>
+  div {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 30px;
+  }
+  table, th, td {
+    border: 1px solid rgb(178, 168, 168);
+    border-collapse: collapse; /* Optional: Makes borders look nicer */
+    padding: 8px; /* Optional: Adds space inside cells */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  tr:hover {background-color: rgb(189, 182, 180);}
+  h2{
+    padding-left: 20px;
+    font-family: Tahoma, sans-serif;
+  }
+  ul {
+    list-style-type: disc; /* Optional: default list style */
+    margin: 0;
+    padding-left: 20px; /* Optional: Adds some indentation */
+  }
+  .action-cell {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h2> Reservation Management System </h2>
+<div>
+<table>
+  <thead>
+    <tr>
+      <th>Room</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for room in items %}
+    <tr>
+        <td>{{ room.room }}</td>
+        <td>{{ room.startDate }}</td>
+        <td>{{ room.endDate }}</td>
+        <td>{{ room.status }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">No room found!</td>
+    </tr>
+    {% endfor %}
+      
+  </tbody>
+</table>
+</div>
+</body>
+</html>
